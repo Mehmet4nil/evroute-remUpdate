@@ -11,7 +11,7 @@ Bu metin, EVroute mobil uygulamasını ("Uygulama") kullanırken hangi kişisel 
 ## 2. İşlenen veriler
 | Veri | Ne zaman | Nerede |
 |---|---|---|
-| **Destek kimliği** (rastgele kullanıcı kimliği) | Uygulama ilk açıldığında, giriş yapmasanız da | Firebase Authentication |
+| **Destek kodu** (rastgele kullanıcı kimliği ve ona bağlı 7 haneli kod) | Uygulama ilk açıldığında, giriş yapmasanız da | Firebase Authentication, Cloud Firestore (AB, eur3) |
 | **Hesap bilgileri**: e-posta, ad, profil fotoğrafı (Google ile girişte) | Hesap açtığınızda | Firebase Authentication |
 | **Ayarlar ve yerler**: araç, şarj ve plan tercihleri, harita teması, favori yerler, son gidilen yerler (ad + koordinat) | Hesapla giriş yaptığınızda | Cloud Firestore (AB, eur3) |
 | **Rota hesaplama kayıtları**: başlangıç ve varış (ad ve ~100 m'ye yuvarlanmış koordinat), araç, plan seçenekleri, kalkış zamanı, sonuç (mesafe, süre, duraklar, enerji, maliyet) veya hata, hesaplama süresi, uygulama sürümü, platform | Her "Rota planla"da | Cloud Firestore (AB, eur3) |
@@ -42,13 +42,13 @@ Bu sağlayıcıların bir kısmı Türkiye dışındadır. Kişisel verilerin yu
 ## 5. Saklama süreleri
 - **Rota hesaplama kayıtları:** 90 gün, sonra silinir.
 - **Hesap, ayarlar ve yerler:** Hesabınızı silene kadar.
-- **Misafir (giriş yapılmamış) destek kimliği:** Uygulama silinene veya veriler temizlenene kadar.
+- **Misafir (giriş yapılmamış) destek kodu:** Uygulama silinene veya veriler temizlenene kadar.
 
 ## 6. Haklarınız (KVKK m.11)
 Verilerinizin işlenip işlenmediğini öğrenme, bilgi isteme, düzeltilmesini veya silinmesini isteme, aktarıldığı üçüncü kişileri öğrenme, itiraz etme ve zararın giderilmesini isteme haklarına sahipsiniz.
 
 - **Hesabınızı ve tüm verilerinizi** uygulamada **Hesap → Hesabı sil** ile silebilirsiniz. Ayarlar, yerler ve rota kayıtları birlikte silinir.
-- Diğer talepleriniz için **mehmetislicik@gmail.com** adresine yazın. Uygulamadaki **Hesap → Destek kimliği**ni eklemeniz kaydınızı bulmamızı kolaylaştırır. Talepler en geç 30 gün içinde yanıtlanır.
+- Diğer talepleriniz için **mehmetislicik@gmail.com** adresine yazın. Uygulamadaki **Hesap → Destek kodu**nu eklemeniz kaydınızı bulmamızı kolaylaştırır. Talepler en geç 30 gün içinde yanıtlanır.
 
 ## 7. Çocuklar
 Uygulama 18 yaş altına yönelik değildir.
@@ -65,7 +65,7 @@ Bu metin güncellenebilir; güncel hâli her zaman bu sayfadadır.
 **Controller:** Mehmet Anıl ISLICIK (developer of EVroute) · Contact: mehmetislicik@gmail.com
 
 **What we process**
-- A random **support ID** (Firebase user ID), created on first launch, even without signing in.
+- A random **support code** (7 characters, linked to a random Firebase user ID), created on first launch, even without signing in.
 - **Account data** if you sign in: e-mail, name and profile photo (Google sign-in).
 - **Settings and places** when signed in: vehicle, charging and plan options, map theme, favourite and recent destinations. Stored in Cloud Firestore (EU, eur3).
 - **Route calculation logs** on every "Plan route": start and destination (name and coordinates rounded to ~100 m), vehicle, plan options, departure time, result or error, duration, app version, platform. Stored in Cloud Firestore (EU).
@@ -79,4 +79,4 @@ There is no advertising, profiling or selling of data.
 
 **Retention:** route logs for 90 days; account, settings and places until you delete your account.
 
-**Your rights:** delete your account and all its data in the app (**Account → Delete account**), or write to mehmetislicik@gmail.com with your support ID to access, correct or erase your data, or to object.
+**Your rights:** delete your account and all its data in the app (**Account → Delete account**), or write to mehmetislicik@gmail.com with your support code to access, correct or erase your data, or to object.
