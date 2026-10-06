@@ -1,6 +1,6 @@
 # EVroute Gizlilik Politikası ve KVKK Aydınlatma Metni
 
-*Son güncelleme: 2 Ekim 2026* · [English version below](#evroute-privacy-policy)
+*Son güncelleme: 6 Ekim 2026* · [English version below](#evroute-privacy-policy)
 
 Bu metin, EVroute mobil uygulamasını ("Uygulama") kullanırken hangi kişisel verilerinizin, hangi amaçla işlendiğini ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamındaki haklarınızı açıklar.
 
@@ -14,8 +14,8 @@ Bu metin, EVroute mobil uygulamasını ("Uygulama") kullanırken hangi kişisel 
 | **Destek kodu** (rastgele kullanıcı kimliği ve ona bağlı 7 haneli kod) | Uygulama ilk açıldığında, giriş yapmasanız da | Firebase Authentication, Cloud Firestore (AB, eur3) |
 | **Hesap bilgileri**: e-posta, ad, profil fotoğrafı (Google ile girişte) | Hesap açtığınızda | Firebase Authentication |
 | **Ayarlar ve yerler**: araç, şarj ve plan tercihleri, harita teması, favori yerler, son gidilen yerler (ad + koordinat) | Hesapla giriş yaptığınızda | Cloud Firestore (AB, eur3) |
-| **Rota hesaplama kayıtları**: başlangıç ve varış (ad ve ~100 m'ye yuvarlanmış koordinat), araç, plan seçenekleri, kalkış zamanı, sonuç (mesafe, süre, duraklar, enerji, maliyet) veya hata, hesaplama süresi, uygulama sürümü, platform | Her "Rota planla"da | Cloud Firestore (AB, eur3) |
-| **Konum** | Yalnızca "konumumu kullan", harita ve navigasyon sırasında | Cihazınızda; yalnızca rota hesaplamasının başlangıcı olarak gönderilir |
+| **Rota hesaplama kayıtları**: başlangıç ve varış (ad ve **tam koordinat**; başlangıç telefonunuzun konumuysa o konumun adresi ve konumun cihazdan geldiği bilgisi), araç, plan seçenekleri, kalkış zamanı, sonuç (mesafe, süre, duraklar, enerji, maliyet) veya hata, hesaplama süresi, uygulama sürümü, platform | Her "Rota planla"da | Cloud Firestore (AB, eur3) |
+| **Konum** | Yalnızca "konumumu kullan", harita ve navigasyon sırasında | Cihazınızda; rota hesaplamasının başlangıcı olarak gönderilir ve o rota hesabının kaydında (yukarıdaki satır, 90 gün) tam koordinatıyla saklanır |
 
 Navigasyon sırasında konum geçmişiniz **kaydedilmez**. Reklam, profil çıkarma veya üçüncü taraflarla pazarlama amaçlı paylaşım **yapılmaz**.
 
@@ -30,7 +30,7 @@ Uygulama aşağıdaki hizmetleri kullanır. Bunlara, işin gerektirdiği en az v
 | Hizmet | Ne için | Gönderilen |
 |---|---|---|
 | Google Firebase (Google Ireland Ltd.) — Firestore AB (eur3) | Hesap, ayarlar, rota kayıtları | Yukarıdaki tablo |
-| EVroute sunucusu (Render, Frankfurt) → OpenRouteService (HeiGIT, Almanya), Open Charge Map | Rota, şarj istasyonları | Rota noktaları (koordinat) |
+| EVroute sunucusu (Render, Frankfurt) → OpenRouteService (HeiGIT, Almanya), Open Charge Map | Rota, şarj istasyonları | Rota noktaları (koordinat), başlangıç konumunuzun adresini bulmak için konum koordinatı |
 | Photon (Komoot, Almanya) | Adres arama, haritada seçilen yerin adı | Aranan metin, seçilen koordinat |
 | Open-Meteo (İsviçre) | Hava tahmini | Rota üzerindeki noktalar |
 | OpenStreetMap Overpass | İstasyon çevresindeki yemek, WC vb. | İstasyon koordinatları |
@@ -60,7 +60,7 @@ Bu metin güncellenebilir; güncel hâli her zaman bu sayfadadır.
 
 # EVroute Privacy Policy
 
-*Last updated: 2 October 2026*
+*Last updated: 6 October 2026*
 
 **Controller:** Mehmet Anıl ISLICIK (developer of EVroute) · Contact: mehmetislicik@gmail.com
 
@@ -68,8 +68,8 @@ Bu metin güncellenebilir; güncel hâli her zaman bu sayfadadır.
 - A random **support code** (7 characters, linked to a random Firebase user ID), created on first launch, even without signing in.
 - **Account data** if you sign in: e-mail, name and profile photo (Google sign-in).
 - **Settings and places** when signed in: vehicle, charging and plan options, map theme, favourite and recent destinations. Stored in Cloud Firestore (EU, eur3).
-- **Route calculation logs** on every "Plan route": start and destination (name and coordinates rounded to ~100 m), vehicle, plan options, departure time, result or error, duration, app version, platform. Stored in Cloud Firestore (EU).
-- **Location** only for "use my location", the map and navigation. It is sent only as the start of a route request; your location history is not stored.
+- **Route calculation logs** on every "Plan route": start and destination (name and **exact coordinates**; if the start is your phone's location, the address of that location and a flag that it came from the device), vehicle, plan options, departure time, result or error, duration, app version, platform. Stored in Cloud Firestore (EU).
+- **Location** only for "use my location", the map and navigation. It is sent as the start of a route request and kept with that route calculation's log (see above, 90 days) with its exact coordinates; your location history is not stored.
 
 There is no advertising, profiling or selling of data.
 
