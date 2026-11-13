@@ -1,6 +1,6 @@
 # EVroute Gizlilik Politikası ve KVKK Aydınlatma Metni
 
-*Son güncelleme: 6 Ekim 2026* · [English version below](#evroute-privacy-policy)
+*Son güncelleme: 14 Kasım 2026* · [English version below](#evroute-privacy-policy)
 
 Bu metin, EVroute mobil uygulamasını ("Uygulama") kullanırken hangi kişisel verilerinizin, hangi amaçla işlendiğini ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamındaki haklarınızı açıklar.
 
@@ -15,6 +15,7 @@ Bu metin, EVroute mobil uygulamasını ("Uygulama") kullanırken hangi kişisel 
 | **Hesap bilgileri**: e-posta, ad, profil fotoğrafı (Google ile girişte) | Hesap açtığınızda | Firebase Authentication |
 | **Ayarlar ve yerler**: araç, şarj ve plan tercihleri, harita teması, favori yerler, son gidilen yerler (ad + koordinat) | Hesapla giriş yaptığınızda | Cloud Firestore (AB, eur3) |
 | **Rota hesaplama kayıtları**: başlangıç ve varış (ad ve **tam koordinat**; başlangıç telefonunuzun konumuysa o konumun adresi ve konumun cihazdan geldiği bilgisi), araç, plan seçenekleri, kalkış zamanı, sonuç (mesafe, süre, duraklar, enerji, maliyet) veya hata, hesaplama süresi, uygulama sürümü, platform | Her "Rota planla"da | Cloud Firestore (AB, eur3) |
+| **Bildirim kaydı** (yalnız bildirimleri açarsanız): cihaz bildirim belirteci (FCM), uygulama sürümü, dil, platform, son açılış zamanı, başarılı rota hesaplama sayısı ve son hesaplamanın zamanı (rotanın kendisi değil) | Bildirim iznini verip Ayarlar'da açık tuttuğunuz sürece | Cloud Firestore (AB, eur3); iletim Google Firebase Cloud Messaging |
 | **Konum** | Yalnızca "konumumu kullan", harita ve navigasyon sırasında | Cihazınızda; rota hesaplamasının başlangıcı olarak gönderilir ve o rota hesabının kaydında (yukarıdaki satır, 90 gün) tam koordinatıyla saklanır |
 
 Navigasyon sırasında konum geçmişiniz **kaydedilmez**. Reklam, profil çıkarma veya üçüncü taraflarla pazarlama amaçlı paylaşım **yapılmaz**.
@@ -23,6 +24,7 @@ Navigasyon sırasında konum geçmişiniz **kaydedilmez**. Reklam, profil çıka
 - **Rota ve şarj planlama, navigasyon** — hizmetin sunulması (KVKK m.5/2-c, sözleşmenin ifası).
 - **Ayarlarınızın ve yerlerinizin cihazlar arasında eşitlenmesi** — hesap açtığınızda, sözleşmenin ifası (m.5/2-c).
 - **Hata giderme ve destek** (rota hesaplama kayıtları) — meşru menfaat (m.5/2-f): bir sorunu bildirdiğinizde ne olduğunu görebilmek.
+- **Duyuru ve güncelleme bildirimleri** — açık rızanız (m.5/1): ilk açılışta izin sorulur, Ayarlar → Bildirimler'den istediğiniz an kapatırsınız; kapatınca belirteç silinir.
 
 ## 4. Hizmet sağlayıcılar ve yurt dışına aktarım
 Uygulama aşağıdaki hizmetleri kullanır. Bunlara, işin gerektirdiği en az veri gönderilir:
@@ -42,6 +44,7 @@ Bu sağlayıcıların bir kısmı Türkiye dışındadır. Kişisel verilerin yu
 ## 5. Saklama süreleri
 - **Rota hesaplama kayıtları:** 90 gün, sonra silinir.
 - **Hesap, ayarlar ve yerler:** Hesabınızı silene kadar.
+- **Bildirim kaydı:** Bildirimleri kapatana kadar (kapatınca belirteç silinir) ya da hesabınızı silene kadar.
 - **Misafir (giriş yapılmamış) destek kodu:** Uygulama silinene veya veriler temizlenene kadar.
 
 ## 6. Haklarınız (KVKK m.11)
@@ -60,7 +63,7 @@ Bu metin güncellenebilir; güncel hâli her zaman bu sayfadadır.
 
 # EVroute Privacy Policy
 
-*Last updated: 6 October 2026*
+*Last updated: 14 November 2026*
 
 **Controller:** Mehmet Anıl ISLICIK (developer of EVroute) · Contact: mehmetislicik@gmail.com
 
@@ -73,10 +76,12 @@ Bu metin güncellenebilir; güncel hâli her zaman bu sayfadadır.
 
 There is no advertising, profiling or selling of data.
 
-**Purposes:** route and charging planning and navigation, syncing your settings and places across devices, troubleshooting and support.
+- **Notification record** (only if you turn notifications on): the device's push token (FCM), app version, language, platform, last-open time, the number of successful route calculations and the time of the last one (not the route itself). Stored in Cloud Firestore (EU); delivered through Google Firebase Cloud Messaging. Asked on first launch (consent); turn it off any time in Settings → Notifications, which deletes the token.
+
+**Purposes:** route and charging planning and navigation, syncing your settings and places across devices, troubleshooting and support, and announcements/update notices if you allow notifications.
 
 **Service providers:** Google Firebase (EU); our server (Render, Frankfurt) with OpenRouteService and Open Charge Map; Photon (Komoot); Open-Meteo; OpenStreetMap Overpass; OpenFreeMap; GitHub. Each receives only what it needs (coordinates, search text, IP address). Some of them are outside Türkiye.
 
-**Retention:** route logs for 90 days; account, settings and places until you delete your account.
+**Retention:** route logs for 90 days; account, settings and places until you delete your account; the notification record until you turn notifications off or delete your account.
 
 **Your rights:** delete your account and all its data in the app (**Account → Delete account**), or write to mehmetislicik@gmail.com with your support code to access, correct or erase your data, or to object.
